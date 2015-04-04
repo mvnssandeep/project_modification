@@ -1,0 +1,153 @@
+<!doctype html>
+
+<!-- Popup form idea borrowed from:
+	http://www.formget.com/how-to-create-pop-up-contact-form-using-javascript/ 
+-->
+
+<html>
+	<head>
+		<title>Quick Question</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/popupform.css">
+		<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<wrapper>
+	<header>
+		<div class="container">
+
+			<!-- title area -->
+			<div class="title">
+				<h1>Quick Question</h1>
+			</div>
+
+			<!-- logon/logoff area -->
+			<div class="logon">
+				<p>
+					<h3 id="logonWelcome">Welcome Guest</h3>
+					<input type="hidden" id="hiddenUN" />
+					<input type="text" id="username" placeholder="Username" /><br>
+					<input type="password" id="password" placeholder="Password" /><br>
+					<button id="btnLogon">Log In</button>
+                                        <button id="btnRegister">Register</button>
+				</p>
+			</div>
+
+			<div class="logoff">
+				<p>
+					<h3>Welcome Guest</h3>
+					<br />
+					<button id="btnLogoff">Log Off</button>
+				</p>
+			</div>
+
+			<div class="welcome">
+				<p>Welcome Guest</p>
+			</div>
+		</div>
+	</header>
+
+
+	<main>
+		<div class="container">
+			
+
+		<!-- new question popup form -->
+			<div id="abc">
+				<div id="popupform">
+					<form action="#" id="form" method="post" name="form">
+						<hr>
+						<h2>New Question</h2>
+						<input id="title" placeholder="Title" type="text"><br>
+						<textarea id="question" name="question" placeholder="Question"></textarea>
+						<fieldset id="expiretime">
+							<div id="radioleft">
+								<input type="radio" name="expire" value="120000">2 minutes<br />
+								<input type="radio" name="expire" value="300000">5 minutes<br />
+								<input type="radio" name="expire" value="600000">10 minutes<br />
+								<input type="radio" name="expire" value="1800000">30 minutes<br />
+							</div>
+							<div id="radioright">
+								<input type="radio" name="expire" value="3600000">1 hour<br />
+								<input type="radio" name="expire" value="21600000">6 hours<br />
+								<input type="radio" name="expire" value="43200000">12 hours<br />
+								<input type="radio" name="expire" value="86400000" checked>24 hours<br />
+							</div>
+						</fieldset>
+						<br />
+						<br />
+						<button type="button" class="formbutton" id="PostSubmit">Post Question</button>
+						<button type="button" class="formbutton" id="PostCancel">Cancel</button>
+					</form>
+				</div>
+			</div>
+		<!-- end new question popup form -->
+
+
+
+
+<!-- new registeration popup form -->
+			<div id="sss">
+				<div id="popupform">
+					<form action="#" id="form" method="post" name="form">
+						<hr>
+						<h2>Registeration Form</h2>
+						<input id="firstname" placeholder="First Name" type="text"><br>
+						<input id="lastname" placeholder="Last Name" type="text"><br>
+                                                <input id="email" placeholder="Email" type="text"><br>
+                                                <input id="password" placeholder="Password" type="password"><br>
+                                                <input id="reenterpassword" placeholder="Re-enter Password" type="password"><br>
+						
+						<button type="button" class="formbutton" id="PostSubmit">submit</button>
+						<button type="button" class="formbutton" id="PostCancel">Cancel</button>
+					</form>
+				</div>
+			</div>
+		<!-- end new registeration popup form -->
+
+
+
+
+
+
+
+		<!-- new answer popup form -->
+			<div id="xyz">
+				<div id="popupform">
+					<form action="#" id="form" method="post" name="form">
+						<hr>
+						<h2>New Answer</h2>
+						<input type="hidden" id="hiddenqid" />
+						<textarea id="answer" name="answer"></textarea>
+						<button type="button" class="formbutton" id="PostSubmit">Post Answer</button>
+						<button type="button" class="formbutton" id="PostCancel">Cancel</button>
+					</form>
+				</div>
+			</div>
+		<!-- end new answer popup form -->	
+
+			<div>
+				<h2>Current Questions</h2>
+				<button id="btnNewPost">New Post</button>
+				<button id="btnRefresh">Refresh</button>
+			</div>
+			<hr>
+			<div class="currentquestions">
+				<!-- AJAX will be placed here -->
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container">
+		</div>
+	</footer>
+</wrapper>
+
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="javascripts/app.js"></script>
+
+	</body>
+</html>
